@@ -185,22 +185,15 @@ export const TimeSeriesChart = memo(function TimeSeriesChart({ data, width = 600
               resizeTriggerAreas={['left', 'right']}
               brushDirection="horizontal"
               onChange={handleBrushChange}
-              extent={sharedBrush ? {
-                x0: brushXScale(sharedBrush.start),
-                x1: brushXScale(sharedBrush.end),
-                y0: 0,
-                y1: brushHeight,
+              initialBrushPosition={sharedBrush ? {
+                start: { x: brushXScale(sharedBrush.start), y: 0 },
+                end: { x: brushXScale(sharedBrush.end), y: brushHeight },
               } : undefined}
               selectedBoxStyle={{
                 fill: '#3b82f6',
                 fillOpacity: 0.2,
                 stroke: '#1d4ed8',
                 strokeWidth: 2,
-              }}
-              patternLines={{
-                stroke: '#1d4ed8',
-                strokeWidth: 1,
-                strokeDasharray: '4 2',
               }}
               useWindowMoveEvents
             />
