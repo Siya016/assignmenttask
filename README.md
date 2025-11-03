@@ -11,6 +11,12 @@ A  Next.js dashboard for solar operations monitoring, anomaly detection, and AI-
 - 📋 **Event Management**: Clickable event chips with time-based navigation
 - 📈 **Performance Optimized**: Lazy loading, memoization, and bundle splitting
 
+📦 Live Demo: https://solarops.vercel.app  
+📄 PRD: docs/PRD.md  
+🧠 Prompt Appendix: docs/PromptAppendix.md  
+🧩 Orchestration Sketch: docs/orchestration-sketch.png  
+📚 ADRs: docs/ADR-01.md, docs/ADR-02.md
+
 
 ## Quick Start
 
