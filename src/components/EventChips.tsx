@@ -22,8 +22,8 @@ const typeLabels = {
 export function EventChips({ events }: EventChipsProps) {
   const { focusedEvent, setFocusedEvent, setSharedBrush } = useStore();
 
-  const handleChipClick = (event: RuleEvent, e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleChipClick = (event: RuleEvent, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setFocusedEvent(event);
     
     // Set shared brush to focus on the event time ±30 minutes
