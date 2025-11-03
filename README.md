@@ -13,9 +13,9 @@ A  Next.js dashboard for solar operations monitoring, anomaly detection, and AI-
 
 📦 Live Demo: https://solarops.vercel.app  
 📄 PRD: docs/PRD.md  
-🧠 Prompt Appendix: docs/PromptAppendix.md  
-🧩 Orchestration Sketch: docs/orchestration-sketch.png  
-📚 ADRs: docs/ADR-01.md, docs/ADR-02.md
+🧠 Prompt Appendix: docs/PrompTS.md  
+🧩 Orchestration Sketch: docs/orchestration.MD 
+📚 ADRs: docs/ADR-01.md
 
 
 ## Quick Start
