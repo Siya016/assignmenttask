@@ -20,7 +20,12 @@ export const CrossSiteDailyEnergy = memo(function CrossSiteDailyEnergy({ data }:
   }, [data, sharedBrush]);
 
   const chartData = useMemo(() => {
-    const dailyData = new Map<string, Record<string, number>>();
+    interface DailyRecord {
+      date: string;
+      [site: string]: number | string;
+    }
+
+    const dailyData = new Map<string, DailyRecord>();
     
     filteredData.forEach(point => {
       const date = new Date(point.timestamp).toISOString().split('T')[0];
@@ -31,7 +36,7 @@ export const CrossSiteDailyEnergy = memo(function CrossSiteDailyEnergy({ data }:
       
       const dayData = dailyData.get(date)!;
       // Aggregate energy (Wh_sum) by site & day
-      dayData[point.site] = (dayData[point.site] || 0) + (point.energy || 0);
+      dayData[point.site] = (Number(dayData[point.site]) || 0) + (point.energy || 0);
     });
     
     const result = Array.from(dailyData.values()).sort((a, b) => a.date.localeCompare(b.date));
