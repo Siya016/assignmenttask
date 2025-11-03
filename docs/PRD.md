@@ -9,7 +9,7 @@ The Solar Ops Mini-Cockpit is a production-ready Next.js dashboard for solar ope
 - **XLSX Upload**: Drag-and-drop interface with flexible column mapping
 - **In-Browser Processing**: Client-side parsing using SheetJS for security
 - **Multi-Site Support**: Automatic site detection and data joining
-- **State Persistence**: Data persists across page navigation using Zustand
+
 
 ### Anomaly Detection (3 Rules)
 - **Rule #1 - Low Power Factor**: PF < 0.85 with severity classification (high: <0.7, medium: <0.8, low: <0.85)
@@ -27,14 +27,11 @@ The Solar Ops Mini-Cockpit is a production-ready Next.js dashboard for solar ope
 - **Google Gemini API**: Direct API integration (not Vertex AI)
 - **3-Bullet Format**: Actionable recommendations citing rule IDs and metrics
 - **Template Fallback**: Deterministic responses when MODEL OFF or API unavailable
-- **Abortable Analysis**: User can cancel long-running requests
-- **MODEL Toggle**: Clear ON/OFF control for AI vs template mode
+
 
 ### Operational Monitoring
 - **In-App Logs**: Dedicated /logs page with filtering and search
-- **Event Tracking**: File uploads, rule detections, AI calls logged
-- **Performance Metrics**: Parse times, event counts, system status
-- **Data Management**: Clear all data functionality
+- **Event Tracking**: File uploads, rule detections, AI calls logged 
 
 ## Technical Requirements
 
@@ -58,14 +55,8 @@ The Solar Ops Mini-Cockpit is a production-ready Next.js dashboard for solar ope
 1. Upload XLSX files (drag-and-drop or browse)
 2. View auto-detected events as colored chips
 3. Click chips to focus charts on anomaly timeframes
-4. Use brush selection to zoom into specific periods
-5. Review 3-bullet AI recommendations in triage panel
-6. Toggle MODEL ON/OFF to compare AI vs template insights
+4. Review 3-bullet AI recommendations in triage panel
+
 
 ### Secondary: Monitor → Investigate → Clear
 1. Navigate to /logs page for system monitoring
-2. Filter logs by level (Info/Warn/Error) or search terms
-
-## Success Metrics
-- **Time to Insight**: < 15 seconds from upload to recommendations
-- **Rule Detection**: All 3 rule types generate event chips
