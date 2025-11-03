@@ -82,14 +82,15 @@ export function runRuleEngine(data: SolarData[]): RuleEvent[] {
     // Handle case where idle period extends to end of data
     if (idleStart && idleCount >= 2) {
       const lastPoint = siteData[siteData.length - 1];
-      const idleDuration = lastPoint.timestamp.getTime() - idleStart.getTime();
+      const endTime = lastPoint ? new Date(lastPoint.timestamp).getTime() : (idleStart as Date).getTime();
+      const idleDuration = endTime - (idleStart as Date).getTime();
       const idleMinutes = idleDuration / (1000 * 60);
       
       events.push({
         id: `R3-${crypto.randomUUID().slice(0, 8)}`,
         type: 'IDLE_PERIOD',
         severity: idleMinutes > 60 ? 'high' : idleMinutes > 30 ? 'medium' : 'low',
-        timestamp: idleStart,
+        timestamp: idleStart as Date,
         site,
         description: `Rule #3: Idle period ${idleMinutes.toFixed(0)} min at ${site}`,
         value: idleMinutes,
