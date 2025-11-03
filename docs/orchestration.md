@@ -27,7 +27,7 @@ User drops XLSX → FileUploader validates → parseXLSXFile() executes
 ```
 User clicks EventChip → setFocusedEvent() → setSharedBrush(±30min)
 → All charts update simultaneously → Brush highlights problem timeframe
-→ User can adjust brush → All charts re-filter data in sync
+→ All charts re-filter data in sync
 ```
 
 ### 3. AI Analysis → Recommendations
@@ -57,7 +57,7 @@ Events auto-trigger analysis → AgentClient checks MODEL toggle
 - **localStorage**: Files, events, modelEnabled persist across sessions
 - **Session Only**: Logs, brush state, loading states reset on refresh
 - **Quota Management**: Custom storage handler prevents quota exceeded errors
-- **Clean State**: Empty dashboard until files uploaded
+-
 
 ## Performance Optimizations (Achieved)
 
@@ -72,13 +72,13 @@ Vendor Bundle: node_modules dependencies
 - **React.memo**: All chart components memoized
 - **Dynamic Imports**: Charts load only when data exists
 - **Data Limiting**: Max 500 points per chart for performance
-- **Conditional Rendering**: Charts only render when hasData = true
+-
 
 ### Memory Management
 - **Log Rotation**: Keep only last 50 entries (reduced from 1000)
 - **Storage Cleanup**: Auto-clear on quota exceeded
-- **Chart Optimization**: Efficient timestamp handling
-- **Abort Controllers**: Cancel in-flight Gemini requests
+
+
 
 ## Error Handling → Graceful Degradation
 
@@ -101,7 +101,7 @@ API Key Missing → Template mode only → Log warning
 - **No Broken States**: Always show something useful
 - **Clear Feedback**: Loading states, error messages, success indicators
 - **Recovery Options**: Clear data, retry analysis, toggle model
-- **Persistent Data**: Work survives page navigation
+
 
 ## Security → Client-First Architecture
 
